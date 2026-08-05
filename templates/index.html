@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Phishing Email Detector</title>
+
+    <style>
+
+        body{
+            background:#0b1020;
+            color:white;
+            text-align:center;
+            font-family:Arial;
+            padding:50px;
+        }
+
+        textarea{
+            width:700px;
+            height:200px;
+            padding:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:18px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🛡️ AI Based Phishing Email Detector</h1>
+
+<form action="/predict" method="POST">
+
+<textarea
+name="email"
+placeholder="Paste email content here">
+</textarea>
+
+<br><br>
+
+<button type="submit">
+Detect Email
+</button>
+
+</form>
+
+{% if prediction %}
+<h2>{{ prediction }}</h2>
+<h3>confidence:{{ confidence }}%</h3>
+{% endif %}
+
+</body>
+</html>
